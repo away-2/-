@@ -1,5 +1,6 @@
-<template>
-  <div>
+ <template>
+  <!-- el-container  -->
+  <div v-if="false">
     <el-container>
       <el-header height="100px">Header</el-header>
       <el-container>
@@ -8,9 +9,7 @@
       </el-container>
       <el-footer height="100px">footer</el-footer>
     </el-container>
-
     <br/>
-
     <el-container>
       <el-header height="100px">Header</el-header>
       <el-container>
@@ -21,7 +20,6 @@
         </el-container>
       </el-container>
     </el-container>
-
     <br/>
     <el-container>
       <el-aside width="200px">Aside</el-aside>
@@ -32,13 +30,44 @@
       </el-container>
     </el-container>
   </div>
-</template>
+  <!-- el-button  -->
+  <div v-if="false">
+    <el-button size="small" type="danger">小</el-button>
+    <el-button>中</el-button>
+    <el-button size="large" type="success">大</el-button>
+  </div>
+  <!-- el-form  -->
+  <div>
+    <el-form :model="form" rules="rules">
+
+      <el-form-item label="用户名" >
+        <el-input v-model="form.username"></el-input>
+      </el-form-item>
+      <el-form-item label="密码" >
+        <el-input v-model="form.password"></el-input>
+      </el-form-item>
+
+      <el-button size="large" type="danger" @click="login">登录</el-button>
+
+    </el-form>
+  </div>
+</template> 
 
 <script setup lang="ts">
+import { reactive } from 'vue'
 
+const form = reactive({
+  username: 'admin',
+  password: ''
+})
+
+const login = () => {
+  console.log(form.username,form.password);
+  
+}
 </script>
 
-<style lang="scss">
+ <style lang="scss">
 body{
   width: 1000px;
   margin: 10px auto;
@@ -64,4 +93,5 @@ body > .el-container{
 .el-container:nth-child(6) .el-aside {
   line-height: 260px;
 }
-</style>
+</style> 
+

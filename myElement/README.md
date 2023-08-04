@@ -7,3 +7,10 @@
 # 布局组件
    1. 组件设计包含布局，色彩，字体，图标等等的通用性
    2. header、 container、 footer、 aside、 main
+
+# Jest
+   单元测试
+   yarn add jest vue-jest @vue/test-utils@next    
+   yarn add babel-jest @babel/core @babel/preset-env
+   yarn add ts-jest @babel/preset-typescript @types/jest
+   
